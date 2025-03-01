@@ -1,0 +1,269 @@
+/* General dark theme */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Header section with gradient background */
+.headerSatta .heading {
+  background: linear-gradient(to right, #1a1a1a, #333);
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.heading h3 {
+  font-weight: bold;
+  color: #ff4d4d; /* Red color for contrast */
+}
+
+.monthYrTbl {
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  color: #fff;
+}
+
+.heading h6 {
+  text-shadow: 1px 1px #ff4d4d; /* Red shadow */
+}
+
+/* Day result section */
+.dayResult h5 {
+  color: #ffcc00; /* Yellow color */
+  font-size: 20px;
+}
+
+.dayResult h6 {
+  color: #fff;
+  font-weight: bold;
+}
+
+.dayResult h2 {
+  color: #2bfeb1; /* Light green */
+  font-weight: bold;
+  margin: 1rem 0rem;
+}
+
+a {
+  text-decoration: unset !important;
+  color: #ffcc00; /* Yellow for links */
+}
+
+/* Day result component */
+.dayResultCompo h1 {
+  background: linear-gradient(to right, #ffcc00, #ff9900); /* Yellow to orange gradient */
+  color: #000; /* Black text for contrast */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.5rem 0px;
+}
+
+.dayResultCompo .div-left {
+  background: linear-gradient(to right, #1a1a1a, #333);
+}
+
+.div-left h3 {
+  color: #ffcc00; /* Yellow */
+}
+
+.div-left span {
+  color: #fff;
+}
+
+.dayResultCompo .div-right {
+  background: linear-gradient(to right, #f5ecce, #e0d8b0);
+}
+
+.div-right h3:nth-child(2) {
+  color: #0077ff; /* Blue */
+}
+
+/* Footer section */
+#month-select,
+#year-select,
+#game-select,
+#go-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  font-weight: bold;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+#go-button {
+  background: linear-gradient(to right, #0077ff, #0055cc); /* Blue gradient */
+  color: white;
+  cursor: pointer;
+}
+
+#go-button:hover {
+  background: linear-gradient(to right, #0055cc, #003399); /* Darker blue gradient */
+}
+
+/* Antd table styles */
+.tableStyle thead tr th {
+  text-wrap: nowrap;
+  background: linear-gradient(to right, #ffcc00, #ff9900) !important; /* Yellow to orange gradient */
+  padding: 0.5rem !important;
+  text-align: center;
+  color: #000; /* Black text */
+}
+
+.tableStyle table {
+  border: 2px;
+  border-radius: 8px !important;
+  text-wrap: nowrap;
+}
+
+.sattaKing {
+  text-align: center;
+  background: linear-gradient(to right, #1a1a1a, #333);
+  border-radius: 10px;
+  padding: 10px 10px;
+  border: 1px solid #444;
+}
+
+.sattaKing h5 {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.ant-table-content tr {
+  background-color: #1a1a1a !important;
+  padding: 0px !important;
+}
+
+.ant-table-content td,
+.ant-table-content tr,
+.ant-table-content th {
+  padding: 5px 0px !important;
+  text-align: center !important;
+  border-right: 1px solid #444 !important;
+  vertical-align: middle !important;
+  color: #fff;
+}
+
+.ant-table-content th {
+  padding: 5px 10px !important;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+  border: 1px solid #444;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #1a1a1a;
+}
+
+/* Blink text animation */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking-text {
+  animation: blink 1s infinite;
+}
+
+/* Text color animation */
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: transparent;
+  animation: effect 1s linear infinite;
+  text-transform: uppercase;
+}
+
+@keyframes effect {
+  0% {
+    background: linear-gradient(to left, #de2828, #410404);
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: linear-gradient(to left, #ed1818, #df1f1f);
+    -webkit-background-clip: text;
+  }
+}
+
+.bottom-section p {
+  font-size: 10px !important;
+  color: #ccc;
+}
+
+.bottom-section h4 {
+  font-size: 15px;
+  color: #ff4d4d !important; /* Red */
+}
+
+/* Advertisement section */
+.advertisementSection .ad-section {
+  width: 92%;
+  margin: 20px auto;
+  border: 3px solid #e67e22;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  background: linear-gradient(to right, #1a1a1a, #333);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.advertisementSection h3 {
+  color: #e67e22; /* Orange */
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.advertisementSection h4 {
+  color: #fff; /* White */
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.advertisementSection .ad-btn {
+  color: #fff;
+  background: linear-gradient(to right, #e74c3c, #c0392b); /* Red gradient */
+  border: none;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.advertisementSection .ad-btn:hover {
+  background: linear-gradient(to right, #c0392b, #a5281b); /* Darker red gradient */
+}
+
+.fa-whatsapp {
+  background: green;
+  border-radius: 65%;
+}
+
+.fa-phone {
+  color: green;
+  box-shadow: 0px 0px 7px #fff;
+  background: #fff;
+  padding: 0.1rem;
+  border-radius: 5px;
+}
