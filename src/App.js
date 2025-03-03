@@ -45,14 +45,12 @@ function App() {
 
   useEffect(() => {
     if (data?.length > 0) {
-      // Convert current time to a moment object for comparison
       const currentMoment = moment(currentTime, "HH:mm");
-
-      // Process and filter the data
+  
       const processedData = data.map((item) => {
         const itemTime = moment(item.open_time, "HH:mm");
         const resultAvailable = item?.curr_date?.result ? true : false;
-
+  
         return {
           gameName: item.game_name,
           result: resultAvailable ? item?.curr_date?.result : "wait",
@@ -61,27 +59,19 @@ function App() {
           itemTime: itemTime,
         };
       });
-
-      // Sort the processed data by open_time
-      const sortedProcessedData = processedData.sort((a, b) => {
-        return a.itemTime.diff(b.itemTime);
-      });
-
-      // Separate records into those with available results and those with "wait"
-      const availableResults = sortedProcessedData.filter(
-        (item) => item.isAvailable
+  
+      const sortedProcessedData = processedData.sort((a, b) =>
+        a.itemTime.diff(b.itemTime)
       );
-      const upcomingRecords = sortedProcessedData.filter(
-        (item) => !item.isAvailable
-      );
-
-      // Determine the records to display
+  
+      const availableResults = sortedProcessedData.filter((item) => item.isAvailable);
+      const upcomingRecords = sortedProcessedData.filter((item) => !item.isAvailable);
+  
       let recordsToDisplay = [];
-
+  
       if (availableResults.length > 0) {
-        // Show available results and include records up to the next upcoming record
         recordsToDisplay = [...availableResults];
-
+  
         const lastAvailableIndex = sortedProcessedData.indexOf(
           availableResults[availableResults.length - 1]
         );
@@ -90,20 +80,17 @@ function App() {
           recordsToDisplay.push(nextRecord);
         }
       } else {
-        // No available results, show up to 3 upcoming records with "wait"
         recordsToDisplay = [...upcomingRecords.slice(0, 3)];
       }
-
-      // Ensure only 3 records are shown
+  
       if (recordsToDisplay.length > 3) {
-        // Remove the oldest record if more than 3 records are present
         recordsToDisplay = recordsToDisplay.slice(-3);
       }
-
-      // Update state with the processed and limited data
+  
+      // Move "wait" items to the top
+      recordsToDisplay.sort((a, b) => (a.result === "wait" ? -1 : 1));
+  
       setDataFor(recordsToDisplay);
-
-      // Debugging log
     }
   }, [data, currentTime]);
 
